@@ -1,0 +1,8 @@
+name: bug-fix-env
+description: AI agent learns to fix buggy Python code using test-based rewards
+version: 1.0
+
+tasks:
+  - easy
+  - medium
+  - hard
