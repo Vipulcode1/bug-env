@@ -1,50 +1,162 @@
-\# AI Bug Fixing Environment
+\# 🧠 AI Bug Fix Environment (OpenEnv Hackathon)
 
 
 
-\## Problem
+\## 🚀 Problem
 
-This environment simulates real-world debugging tasks where an AI agent fixes buggy Python code.
+Developers waste time fixing bugs without structured feedback.  
 
-
-
-\## Tasks
-
-\- Easy: Syntax errors
-
-\- Medium: Logic bugs
-
-\- Hard: Multi-case function bugs
+No automated environment to test, evaluate, and guide fixes step-by-step.
 
 
 
-\## Actions
-
-\- edit\_code
+\---
 
 
 
-\## Reward
+\## 💡 Solution
 
-\- Full fix: +1.0
-
-\- Improvement: +0.5
-
-\- Worse: -0.5
-
-\- No change: -0.1
+We built an \*\*AI-powered bug fixing environment\*\* that:
 
 
 
-\## How to Run
+\- Accepts code actions
 
-1\. Start server:
+\- Runs hidden test cases
 
-&#x20;  uvicorn server.app:app --reload
+\- Returns reward + feedback
+
+\- Simulates reinforcement learning loop
 
 
 
-2\. Run agent:
+\---
 
-&#x20;  python inference.py
+
+
+\## ⚙️ How it works
+
+
+
+\### 1. Reset Environment
+
+POST /reset
+
+
+
+\### 2. Take Step
+
+POST /step
+
+{
+
+&#x20; "action": "your code here"
+
+}
+
+
+
+\### Output
+
+{
+
+&#x20; "state": {...},
+
+&#x20; "reward": 1.0,
+
+&#x20; "done": true
+
+}
+
+
+
+\---
+
+
+
+\## 🧪 Example
+
+
+
+\### Input
+
+def add(a,b): return a+b
+
+
+
+\### Test
+
+add(2,3)==5
+
+
+
+\### Output
+
+\- reward = 1.0 ✅
+
+\- done = true
+
+
+
+\---
+
+
+
+\## 🧱 Architecture
+
+
+
+\- FastAPI (server)
+
+\- Custom Env (environment.py)
+
+\- Grader (grader.py)
+
+\- Task Engine (tasks.py)
+
+
+
+\---
+
+
+
+\## 🔥 Features
+
+
+
+\- Multi-level tasks (easy → hard)
+
+\- Dynamic test execution
+
+\- Reward-based evaluation
+
+\- API-based interaction
+
+
+
+\---
+
+
+
+\## 🚀 Future Scope
+
+
+
+\- LLM auto-fix suggestions
+
+\- Difficulty scaling
+
+\- Debug explanation engine
+
+
+
+\---
+
+
+
+\## 👨‍💻 Team
+
+
+
+\- Vipul
 
